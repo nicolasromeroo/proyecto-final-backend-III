@@ -22,8 +22,7 @@ describe("Rutas de Task (Crear, Obtener, Editar, Eliminar)", function () {
         useUnifiedTopology: true,
       });
       console.log("DB is connected");
-
-      // ✅ Registramos y logueamos un usuario de prueba
+      
       const newUser = {
         first_name: "Task",
         last_name: "Tester",
@@ -68,7 +67,7 @@ describe("Rutas de Task (Crear, Obtener, Editar, Eliminar)", function () {
     expect(body).to.have.property("priority", newTask.priority);
     expect(body).to.have.property("completed", false);
 
-    taskId = body._id; // Guardamos el taskId para siguientes pruebas
+    taskId = body._id;
   });
 
   it("Ruta: GET /api/tasks/:taskId - Debería obtener una tarea por su ID", async () => {
